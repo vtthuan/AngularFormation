@@ -1,0 +1,33 @@
+<div class="ui vertical steps">
+
+    <div [class.active]="ratio < 7" class="step">
+
+      <div class="content">
+
+        <div class="title">Normal</div>
+
+      </div>
+
+    </div>
+
+    <div [class.active]="ratio >= 8" class="step">
+
+      <div class="content">
+
+        <div class="title">Elevé</div>
+
+      </div>
+
+    </div>
+
+    <div [class.active]="ratio > 7 && ratio < 8" class="step">
+
+      <div class="content">
+
+        <div class="title">Haut potentiel</div>
+
+      </div>
+
+    </div>
+
+ </div>

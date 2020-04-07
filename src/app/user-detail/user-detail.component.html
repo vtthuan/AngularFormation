@@ -1,0 +1,39 @@
+<div class="ui card">
+
+    <div class="image">
+
+     <img [src]="user.userImage">
+
+   </div>
+
+   <div class="content">
+
+     <a class="header">{{user.userName}}</a>
+
+     <div class="meta">
+
+       <span class="date">{{user.userAge}} ans</span>
+
+     </div>
+
+    <div class="description">
+
+        {{user.userName}} travaille chez AUSY en tant que {{user.userJob }}
+
+     </div>
+
+   </div>
+
+   <div class="extra content">
+
+     <a>
+
+       <i class="user icon"></i>
+
+       Score : {{user.userRating}} 
+
+     </a>
+
+   </div>
+
+</div>
