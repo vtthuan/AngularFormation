@@ -19,8 +19,7 @@ import { UserDetailGuard } from './user-detail.guard';
     UserListComponent,
     ConvertToListPipe,
     UserRatingComponent,
-    WelcomeComponent,
-    UserDetailGuard
+    WelcomeComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule , CommonModule,

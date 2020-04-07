@@ -1,39 +1,28 @@
-<div class="ui card">
-
-    <div class="image">
-
-     <img [src]="user.userImage">
-
-   </div>
-
-   <div class="content">
-
-     <a class="header">{{user.userName}}</a>
-
-     <div class="meta">
-
-       <span class="date">{{user.userAge}} ans</span>
-
-     </div>
-
+<div *ngIf='currentUser' class="ui card">
+  <div class="image">
+    <img src="{{ currentUser.userImage }}">
+  </div>
+  <div class="content">
+    <a class="header">{{ currentUser.userName }}</a>
+    <div class="meta">
+      <span class="date">{{ currentUser.userAge }} ans</span>
+    </div>
     <div class="description">
-
-        {{user.userName}} travaille chez AUSY en tant que {{user.userJob }}
-
-     </div>
-
-   </div>
-
-   <div class="extra content">
-
-     <a>
-
-       <i class="user icon"></i>
-
-       Score : {{user.userRating}} 
-
-     </a>
-
-   </div>
-
+      {{ currentUser.userName }} travaille chez AUSY en tant que {{ currentUser.userJob }}.
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      Score : {{ currentUser.userRating }}
+    </a>
+  </div>
 </div>
+<button class="ui labeled icon button" (click)='onBack()'>
+  <i class="left arrow icon"></i>
+  Retour
+</button>
+<button class="ui labeled icon button" (click)='onHome()'>
+  <i class="pause icon"></i>
+  Accueil
+</button>
