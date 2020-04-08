@@ -1,10 +1,8 @@
 
 import { Pipe, PipeTransform } from '@angular/core';
 
-
 @Pipe({
     name : "convertToList"
-
 })
 
 export class ConvertToListPipe implements PipeTransform

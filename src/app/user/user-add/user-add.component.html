@@ -1,0 +1,277 @@
+<form class="ui form" #form="ngForm">
+
+  <div class="field">
+
+    <label>Nom</label>
+
+    <input type="text" name="name" placeholder="Nom" [(ngModel)]="currentUser.name"/>
+
+  </div>
+
+  <div class="field">
+
+    <label>Age</label>
+
+    <input type="number" name="age" placeholder="Age" [(ngModel)]="currentUser.age"/>
+
+  </div>
+
+  <div class="field">
+
+    <label>Poste</label>
+
+    <select class="ui fluid dropdown" name="job" [(ngModel)]="currentUser.job">
+
+      <option value="">Poste...</option>
+
+      <option value="CDP">Chef de projet</option>
+
+      <option value="ARC">Architecte</option>
+
+      <option value="DEV">Développeur</option>
+
+      <option value="REC">Testeur</option>
+
+    </select>
+
+  </div>
+
+  <div class="field">
+
+    <label>Note</label>
+
+    <input type="range" name="rating" placeholder="Note" min="0" max="5" [(ngModel)]="currentUser.rating"/>
+
+  </div>
+
+  <h4 class="ui dividing header">Compétences</h4>
+
+  <div class="inline fields">
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="jee" [(ngModel)]="currentUser.jee"/>
+
+          <label>JEE</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="java" [(ngModel)]="currentUser.java"/>
+
+          <label>Java</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="soa" [(ngModel)]="currentUser.soa"/>
+
+          <label>SOA</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="javascript" [(ngModel)]="currentUser.javascript"/>
+
+          <label>JavaScript</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="angular" [(ngModel)]="currentUser.angular"/>
+
+          <label>Angular</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="inline fields">
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="junit" [(ngModel)]="currentUser.junit"/>
+
+          <label>Junit</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="selenium" [(ngModel)]="currentUser.selenium"/>
+
+          <label>Selenium</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="squash" [(ngModel)]="currentUser.squash"/>
+
+          <label>Squash</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="robot" [(ngModel)]="currentUser.robot"/>
+
+          <label>Robot Framework</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="inline fields">
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="cpp" [(ngModel)]="currentUser.cpp"/>
+
+          <label>C++</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="net" [(ngModel)]="currentUser.net"/>
+
+          <label>.Net</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="scrum" [(ngModel)]="currentUser.scrum"/>
+
+          <label>SCRUM</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="field">
+
+      <div class="ui left compact segment">
+
+        <div class="ui toggle checkbox">
+
+          <input type="checkbox" name="kanban"  [(ngModel)]="currentUser.kanban"/>
+
+          <label>KANBAN</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="ui primary button">
+
+    Save
+
+  </button>
+
+</form>
+
+{{form.value |json}}
