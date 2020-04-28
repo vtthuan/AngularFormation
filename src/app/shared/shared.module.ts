@@ -10,6 +10,6 @@ import { ConvertToListPipe } from './convert-to-list.pipe';
   imports: [
     CommonModule
   ],
-  exports:[CommonModule, FormsModule, UserRatingComponent, ConvertToListPipe]
+  exports: [CommonModule, FormsModule, UserRatingComponent, ConvertToListPipe]
 })
 export class SharedModule { }

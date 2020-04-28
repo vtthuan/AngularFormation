@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { IUser } from '../user/user';
 import { UserService } from '../user/user.service';
 
 @Component({
-  selector: "app-user-list",
-  templateUrl: "./user-list.component.html",
-  styleUrls: ["./user-list.component.css"]
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  pageTitle: string = "Liste des utilisateurs";
-  imageSize: number = 50;
-  showRating: boolean = false;
+  pageTitle = 'Liste des utilisateurs';
+  imageSize = 50;
+  showRating = false;
   errorMessage: string;
 
   _userFilter: string;

@@ -8,13 +8,13 @@ import { UserAddComponent } from './user-add/user-add.component';
 
 @NgModule({
   declarations: [],
-  imports: [    
+  imports: [
     RouterModule.forChild([
-      {path:'user/:id', component: UserDetailComponent, canActivate:[UserDetailGuard]},
-      {path:'users', component: UserListComponent},
-      {path:'userAdd', component: UserAddComponent}
+      {path: 'user/:id', component: UserDetailComponent, canActivate: [UserDetailGuard]},
+      {path: 'users', component: UserListComponent},
+      {path: 'userAdd', component: UserAddComponent}
     ]),
-  ], 
+  ],
   exports : [RouterModule]
 })
 export class UserRoutingModule { }

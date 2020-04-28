@@ -1,47 +1,50 @@
-<form class="ui form" #form="ngForm">
+<form class="ui form" #form="ngForm" (ngSubmit)="onSubmit(form)">
 
   <div class="field">
 
     <label>Nom</label>
 
-    <input type="text" name="name" placeholder="Nom" [(ngModel)]="currentUser.name"/>
+    <input type="text" name="name" placeholder="Nom" [(ngModel)]="currentUser.name" required 
+    #nameField="ngModel" [class.user-field-error]="form.submitted && nameField.invalid"/>
 
+    <div class="ui red pointing label" [class.hidden]="!form.submitted || nameField.valid">
+      Merci d'entrer un nom
+    </div>
   </div>
 
   <div class="field">
 
     <label>Age</label>
 
-    <input type="number" name="age" placeholder="Age" [(ngModel)]="currentUser.age"/>
+    <input type="number" name="age" placeholder="Age" [(ngModel)]="currentUser.age"
+    pattern="(1[89]|[2-5][0-9]|6[0-5])" required #ageField="ngModel" [class.user-field-error]="form.submitted && ageField.invalid"/>
 
+    <div class="ui red pointing label" [class.hidden]="!form.submitted  || ageField.valid">
+      Merci d'entrer un age
+    </div>
   </div>
 
   <div class="field">
 
     <label>Poste</label>
 
-    <select class="ui fluid dropdown" name="job" [(ngModel)]="currentUser.job">
-
-      <option value="">Poste...</option>
-
-      <option value="CDP">Chef de projet</option>
-
-      <option value="ARC">Architecte</option>
-
-      <option value="DEV">Développeur</option>
-
-      <option value="REC">Testeur</option>
-
-    </select>
-
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="currentUser.job">
+      <label ngbButtonLabel class="btn-primary" *ngFor="let job of jobs">
+        <input ngbButton type="radio" [value]="job.key"> {{job.value}}
+      </label>
+    </div>
   </div>
 
   <div class="field">
 
     <label>Note</label>
 
-    <input type="range" name="rating" placeholder="Note" min="0" max="5" [(ngModel)]="currentUser.rating"/>
+    <input type="range" name="rating" placeholder="Note" pattern="([1-5]\d)" [(ngModel)]="currentUser.rating"
+    required #ratingField="ngModel" [class.user-field-error]="form.submitted && ratingField.invalid" />
 
+    <div class="ui red pointing label" [class.hidden]="!form.submitted ||  ratingField.valid">
+      Merci de rater
+    </div>
   </div>
 
   <h4 class="ui dividing header">Compétences</h4>
@@ -263,9 +266,10 @@
       </div>
 
     </div>
-
   </div>
-
+  <div class="ui red label" [class.hidden]="!error">
+    {{errorMessage}}
+  </div>
   <button class="ui primary button">
 
     Save
@@ -274,4 +278,3 @@
 
 </form>
 
-{{form.value |json}}

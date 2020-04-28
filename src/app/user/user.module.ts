@@ -8,11 +8,14 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserAddComponent } from './user-add/user-add.component';
 
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [UserListComponent, UserDetailComponent, UserAddComponent],
   imports: [
-    SharedModule,    
-    UserRoutingModule
+    SharedModule,
+    UserRoutingModule,
+    NgbModule
   ]
 })
 export class UserModule { }

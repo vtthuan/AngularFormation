@@ -8,18 +8,19 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 export class UserRatingComponent implements OnInit, OnChanges {
 
   constructor() { }
-  
-  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
+
+  @Input() rating: number;
+  @Input() age: number;
+
+  statusNormal: string;
+  statusEleve: string;
+  statusHP: string;
+
+  ratio: number;
+
+  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
     this.ratio = this.age / this.rating;
   }
-
-  @Input() rating : number;
-  @Input() age : number;
-  statusNormal  : string;
-  statusEleve  : string;
-  statusHP : string;
-
-  ratio : number;
 
   ngOnInit(): void {
   }

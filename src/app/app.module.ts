@@ -12,6 +12,7 @@ import { UserModule } from './user/user.module';
 import { AppRoutingModule } from './app-routing.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     UserModule,
     BrowserModule, HttpClientModule ,
-    
     AppRoutingModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

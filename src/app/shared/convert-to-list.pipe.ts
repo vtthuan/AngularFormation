@@ -2,19 +2,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name : "convertToList"
+    name : 'convertToList'
 })
 
-export class ConvertToListPipe implements PipeTransform
-{
+export class ConvertToListPipe implements PipeTransform {
     transform(value: string) {
 
-        var s = "<ul>"
-        for(let v of value.split(','))
-        {
-            s += "<li>" + v + "</li>";
+        let s = '<ul>';
+        for (const v of value.split(',')) {
+            s += '<li>' + v + '</li>';
         }
-        return s + "</ul>";
+        return s + '</ul>';
     }
-    
+
 }
